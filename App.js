@@ -6,6 +6,7 @@ import { useDeviceOrientation } from '@react-native-community/hooks';
 import Weather from './appscreens/Weather';
 import GoodStuff from './appscreens/Goodstuff';
 import SmallStuff from './appscreens/SmallStuff';
+import ToDo from './appscreens/ToDo';
 export default function App() {
   const { width, height } = useWindowDimensions();
   const landscape = width > height;
@@ -14,6 +15,10 @@ export default function App() {
     return(<GoodStuff setMode={setMode} />);
   } else if (mode == 'weather'){
     return(<Weather />);
+  } else if (mode == 'ToDo'){
+    return(<ToDo />);
+  } else{
+    return(<SmallStuff />);
   }
 }
 
