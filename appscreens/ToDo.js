@@ -2,11 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableWithoutFeedback, TouchableOpacity, Button, Dimensions, useWindowDimensions, ImageBackground, TextInput } from 'react-native';
 import { useState } from 'react';
 import { useDeviceOrientation } from '@react-native-community/hooks';
-export default function ToDo(){
+export default function ToDo({setMode}){
     const [toDos, setToDos] = useState([]);
     const [text, setText] = useState('');
     const {width, height} = useWindowDimensions();
     const [done, setDone] = useState([]);
+    // next step: save list to local storage, add option to delete from done list, add option to edit to-do items
     const removeItem = (index) => {
         setDone([...done, toDos[index]]);
         setToDos(toDos.filter((toDo, i) => i !== index));
@@ -36,6 +37,21 @@ export default function ToDo(){
                     </View>
                     )}
             </View>
+            <TouchableOpacity onPress={() => {setMode('good')}}style={{position: 'absolute', bottom: 50, alignSelf: 'center'}} >
+        <View style={{
+          backgroundColor: 'red', 
+          height: 50,
+            width: 100,
+            borderWidth: 5,
+            borderColor: 'tomato',
+            borderRadius: 10,
+            margin: 10,
+            alignItems: 'center',
+            justifyContent: 'center',
+        }}>
+            <Text style={{color: 'black', fontSize: 20}}>Back</Text>
+        </View>
+        </TouchableOpacity>
         </ImageBackground>
     );
 }

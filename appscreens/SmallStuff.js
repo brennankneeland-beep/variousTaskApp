@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableWithoutFeedback, TouchableOpaci
 import { useState } from 'react';
 import { useDeviceOrientation } from '@react-native-community/hooks';
 
-export default function SmallStuff(){
+export default function SmallStuff({setMode}){
   const [y, setY] = useState(0);
   const [x, setX] = useState('hi');
   const [z, setZ] = useState(0);
@@ -25,6 +25,21 @@ export default function SmallStuff(){
        onPress={() => {const currentTime = new Date(); alert(`value saved, time since last pressed: ${(currentTime - time)/1000} seconds`); setTime(currentTime); if (z == 0){setX('saved values: ' + y); setZ(1) } else {setX(x + ', ' + y)}}}
       />
       <Text style = {{color: 'white', fontSize: 30}}>{x} current value:{y}</Text>
+      <TouchableOpacity onPress={() => {setMode('good')}} style={{position: 'absolute', bottom: 50, alignSelf: 'center'}} >
+        <View style={{
+          backgroundColor: 'red', 
+          height: 50,
+            width: 100,
+            borderWidth: 5,
+            borderColor: 'tomato',
+            borderRadius: 10,
+            margin: 10,
+            alignItems: 'center',
+            justifyContent: 'center',
+        }}>
+            <Text style={{color: 'black', fontSize: 20}}>Back</Text>
+        </View>
+        </TouchableOpacity>
     </View>
     </>);
 }
