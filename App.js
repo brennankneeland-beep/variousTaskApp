@@ -7,6 +7,8 @@ import Weather from './appscreens/Weather';
 import GoodStuff from './appscreens/Goodstuff';
 import SmallStuff from './appscreens/SmallStuff';
 import ToDo from './appscreens/ToDo';
+import CardCardTesterScreen from './appscreens/cardtester';
+import Malcolm from './appscreens/malcolm';
 export default function App() {
   const { width, height } = useWindowDimensions();
   const landscape = width > height;
@@ -18,7 +20,7 @@ export default function App() {
   } else if (mode == 'ToDo'){
     return(<ToDo setMode={setMode} />);
   } else if (mode == 'small'){
-    return(<SmallStuff setMode={setMode} />);
+    return(<Malcolm setMode={setMode} />);
   } else {
     return(<Login setMode={setMode} />);
   }

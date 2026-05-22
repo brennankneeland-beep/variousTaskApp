@@ -26,7 +26,7 @@ export default function GoodStuff({ setMode}){
         alignItems: 'center',
         justifyContent: 'center',
         }}>
-          <AntDesign name="check" size={60} color="black" />
+          <AntDesign name="calendar" size={60} color="black" />
         </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {setMode('weather')}}>
@@ -59,6 +59,11 @@ export default function GoodStuff({ setMode}){
           <AntDesign name="qq" size={60} color="black" />
       </View>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => {setMode('login')}} style={{position: 'absolute', bottom: 50, alignSelf: 'center'}} >
+        <View style = {{width: '95%', height: 50, backgroundColor: 'red', borderWidth: 5, borderColor: 'tomato', borderRadius: 10, margin: 10, alignItems: 'center', justifyContent: 'center'}}>
+          <Text>Logout</Text>
         </View>
+        </TouchableOpacity>
+    </View>
  );
 }
