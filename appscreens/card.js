@@ -4,7 +4,7 @@ import { useState } from 'react';
 function Card({title, subtitle, image}){
     return(
         <View style={styles.card}>
-            <Image source={image} style={{width: '100%', height: '70%', borderRadius: 10, overflow: 'hidden', alignItems: 'center', justifyContent: 'center'}}/>
+            <Image source={image} style={styles.image}/>
             <Text style={{fontSize: 20, fontWeight: 'bold'}}>{title}</Text>
             <Text style={{fontSize: 16}}>{subtitle}</Text>
         </View>
@@ -22,5 +22,12 @@ const styles = StyleSheet.create({
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexDirection: 'column',
+
+            },
+            image: {width: '100%',
+                height: '70%',
+                borderRadius: 10,
+                overflow: 'hidden', alignItems: 'center',
+                justifyContent: 'center'
             },
 });

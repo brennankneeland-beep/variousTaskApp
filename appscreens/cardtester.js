@@ -12,6 +12,7 @@ export default function CardTesterScreen({setMode}){
                 subtitle="card subtitle here"
                 image={require('../assets/lion.png')}>
             </Card>
+            <Card title='cool card' subtitle= 'one million dollars' image={require('../assets/thrmo.png')}/>
             <TouchableOpacity onPress={() => {setMode('good')}} style={{position: 'absolute', bottom: 50, alignSelf: 'center'}} >
         <View style={{
           backgroundColor: 'red',

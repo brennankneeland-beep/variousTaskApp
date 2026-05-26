@@ -9,6 +9,7 @@ import SmallStuff from './appscreens/SmallStuff';
 import ToDo from './appscreens/ToDo';
 import CardCardTesterScreen from './appscreens/cardtester';
 import Malcolm from './appscreens/malcolm';
+import VeloScreen from './appscreens/velo';
 export default function App() {
   const { width, height } = useWindowDimensions();
   const landscape = width > height;
@@ -16,7 +17,7 @@ export default function App() {
   if (mode == 'good'){
     return(<GoodStuff setMode={setMode} />);
   } else if (mode == 'weather'){
-    return(<Weather setMode={setMode} />);
+    return(<VeloScreen setMode={setMode} />);
   } else if (mode == 'ToDo'){
     return(<ToDo setMode={setMode} />);
   } else if (mode == 'small'){

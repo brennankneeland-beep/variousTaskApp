@@ -11,7 +11,6 @@ export default function Malcolm({ setMode }) {
   const [red, setRed] = useState(false);
   const [time, setTime] = useState(new Date());
 
-  // keep generating random numbers until one is >= 60
   useEffect(() => {
     if (!red && random <= 80) {
       const id = setTimeout(() => {
@@ -25,8 +24,6 @@ export default function Malcolm({ setMode }) {
       setTime(new Date()); // start timing the reaction
     }
   }, [random, red]);
-
-  // RED SCREEN (user must react)
   if (red) {
     return (
         <View style={{ backgroundColor: 'red', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
